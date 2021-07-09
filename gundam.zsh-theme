@@ -15,20 +15,27 @@ username() {
 }
 
 directory() {
-  echo "[${LIGHTYELLOW}${PWD}${NC}]"
-}
-
-
-gundam() {
-  echo "\nガンダム "
+  echo "[${LIGHTYELLOW}%~${NC}]"
 }
 
 date() {
   echo "[${LIGHTBLUE}%*${NC}]"
 }
 
-ZSH_THEME_GIT_PROMPT_PREFIX="["
-ZSH_THEME_GIT_PROMPT_SUFFIX="]"
+gundam() {
+  echo "\nガンダム "
+}
+
+ZSH_THEME_GIT_PROMPT_PREFIX="[${LIGHTRED}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="${NC}]"
 ZSH_THEME_GIT_PROMPT_DIRTY="*"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
-PROMPT='$(username)$(directory)$(date)$(git_prompt_info)$(gundam)'
+# set the git_prompt_status text
+ZSH_THEME_GIT_PROMPT_ADDED="%{${LIGHTYELLOW}%} ✈%${NC}"
+ZSH_THEME_GIT_PROMPT_MODIFIED="%{${LIGHTYELLOW}%} ✭%${NC}"
+ZSH_THEME_GIT_PROMPT_DELETED="%{${LIGHTYELLOW}%}✗%${NC}"
+ZSH_THEME_GIT_PROMPT_RENAMED="%{${LIGHTYELLOW}%} ➦%${NC}"
+ZSH_THEME_GIT_PROMPT_UNMERGED="%{${LIGHTYELLOW}%} ✂%${NC}"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{${LIGHTYELLOW}%} ✱%${NC}"
+
+PROMPT='$(username)$(directory)$(git_prompt_info)$(date)$(gundam)'
