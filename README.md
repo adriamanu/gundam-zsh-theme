@@ -8,6 +8,10 @@ As i do love zsh and gundam, i decided to make a simple Gundam flavored zsh them
 
 ![mate-terminal](/assets/mate-terminal.png)
 
+### Terminator:
+
+![terminator](/assets/terminator.png)
+
 ## Installation
 
 1. Ensure that you are using `zsh` and `oh-my-zsh`.<br>
